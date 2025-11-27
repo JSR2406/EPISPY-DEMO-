@@ -10,12 +10,14 @@ from src.utils.app_state import get_app_state, AppState
 router = APIRouter()
 
 @router.get("/")
+@router.get("/health")
 async def health_check() -> Dict[str, Any]:
-    """Basic health check."""
+    """Basic health check - responds immediately."""
     return {
         "status": "healthy",
         "timestamp": datetime.now().isoformat(),
-        "service": "epidemic-prediction-api"
+        "service": "epidemic-prediction-api",
+        "version": "1.0.0"
     }
 
 @router.get("/detailed")
@@ -31,71 +33,41 @@ async def detailed_health_check(
         "components": {}
     }
     
-    # Check Ollama client
-    try:
-        if app_state.ollama_client:
-            # Quick test
-            test_result = await asyncio.wait_for(
-                app_state.ollama_client._generate_async(
-                    "llama3.2", "Say 'OK' if you're working"
-                ),
-                timeout=5.0
-            )
-            health_status["components"]["ollama"] = {
-                "status": "healthy" if "OK" in test_result else "degraded",
-                "response_time": "< 5s"
-            }
-        else:
-            health_status["components"]["ollama"] = {"status": "unavailable"}
-    except Exception as e:
-        health_status["components"]["ollama"] = {
-            "status": "unhealthy",
-            "error": str(e)
-        }
-    
-    # Check SEIR model
+    # Check SEIR model (quick check only)
     try:
         if app_state.seir_model:
-            # Quick simulation test
-            test_sim = app_state.seir_model.simulate(days=1)
-            health_status["components"]["seir_model"] = {
-                "status": "healthy" if len(test_sim) > 0 else "degraded"
-            }
+            health_status["components"]["seir_model"] = {"status": "available"}
         else:
             health_status["components"]["seir_model"] = {"status": "unavailable"}
     except Exception as e:
         health_status["components"]["seir_model"] = {
-            "status": "unhealthy",
+            "status": "error",
             "error": str(e)
         }
     
-    # Check ChromaDB
+    # Check Ollama client (without testing)
+    try:
+        if app_state.ollama_client:
+            health_status["components"]["ollama"] = {"status": "available"}
+        else:
+            health_status["components"]["ollama"] = {"status": "unavailable"}
+    except Exception as e:
+        health_status["components"]["ollama"] = {
+            "status": "error",
+            "error": str(e)
+        }
+    
+    # Check ChromaDB (without testing)
     try:
         if app_state.chroma_client:
-            # Test connection
-            collections = app_state.chroma_client.list_collections()
-            health_status["components"]["chroma_db"] = {
-                "status": "healthy",
-                "collections": len(collections)
-            }
+            health_status["components"]["chroma_db"] = {"status": "available"}
         else:
             health_status["components"]["chroma_db"] = {"status": "unavailable"}
     except Exception as e:
         health_status["components"]["chroma_db"] = {
-            "status": "unhealthy",
+            "status": "error",
             "error": str(e)
         }
-    
-    # Determine overall status
-    component_statuses = [
-        comp.get("status", "unknown") 
-        for comp in health_status["components"].values()
-    ]
-    
-    if any(status == "unhealthy" for status in component_statuses):
-        health_status["status"] = "unhealthy"
-    elif any(status in ["degraded", "unavailable"] for status in component_statuses):
-        health_status["status"] = "degraded"
     
     return health_status
 

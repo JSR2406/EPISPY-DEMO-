@@ -1,12 +1,12 @@
 import os
-from typing import Optional
+from typing import Optional, Any
 from pydantic import BaseModel
-from pydantic_settings import BaseSettings, SettingsConfigDict
 from ..utils.config import settings
 
-# CRITICAL FIX: Use absolute import path from project root (src is in sys.path via run_api.py)
-# This resolves the Uvicorn/FastAPI circular import issue.
-from src.integrations.ollama_client import get_ollama_analysis as OllamaClient 
+# Import client wrappers
+from ..integrations.ollama_client_wrapper import OllamaClient
+from ..integrations.chroma_client import ChromaDBClient
+from ..models.seir_model import SEIRModel
 
 
 class AppState(BaseModel):
@@ -15,11 +15,12 @@ class AppState(BaseModel):
     when the FastAPI application starts up.
     """
     ollama_client: Optional[OllamaClient] = None
-    # Add other long-lived dependencies here (e.g., database connection, Redis client)
+    chroma_client: Optional[ChromaDBClient] = None
+    seir_model: Optional[SEIRModel] = None
+    startup_time: Optional[Any] = None
     
-    # Example:
-    # db_session: Optional[Any] = None
-    # redis_client: Optional[Any] = None
+    class Config:
+        arbitrary_types_allowed = True
 
 
 # Initialize the shared state object

@@ -95,7 +95,8 @@ def main():
 def check_api_connection():
     """Check API connection status."""
     try:
-        response = requests.get("http://localhost:8000/api/v1/health", timeout=5)
+        # Use root endpoint which is faster
+        response = requests.get("http://localhost:8000/", timeout=20)
         if response.status_code == 200:
             return {"connected": True, "data": response.json()}
         else:

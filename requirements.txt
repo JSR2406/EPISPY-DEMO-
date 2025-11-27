@@ -31,6 +31,7 @@ anthropic~=0.23.0
 # Vector database and storage
 chromadb~=0.4.24
 redis~=5.0.1
+aioredis~=2.0.1
 
 # Speech processing
 openai-whisper==20231117 
@@ -52,6 +53,9 @@ passlib[bcrypt]~=1.7.4
 celery~=5.4.0
 asyncio-mqtt~=0.14.0
 
+# System monitoring
+psutil~=5.9.8
+
 # Testing
 pytest~=8.2.2
 pytest-asyncio~=0.23.6
@@ -60,6 +64,11 @@ pytest-asyncio~=0.23.6
 black~=24.4.2
 flake8~=7.0.0
 mypy~=1.10.0
+
+# Database - Async SQLAlchemy and PostgreSQL
+sqlalchemy[asyncio]~=2.0.23
+asyncpg~=0.29.0
+alembic~=1.13.1
 
 # Deployment
 gunicorn~=22.0.0
