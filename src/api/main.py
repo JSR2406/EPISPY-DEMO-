@@ -180,6 +180,16 @@ app.include_router(prediction.router, prefix="/api/v1/prediction", tags=["Predic
 app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
 app.include_router(data_ingestion.router, prefix="/api/v1/data", tags=["Data Ingestion"])
 
+# Import and include Auth routes
+try:
+    from src.auth import auth_routes
+    app.include_router(auth_routes.router)
+    api_logger.info("Auth routes loaded successfully")
+except ImportError as e:
+    api_logger.warning(f"Auth routes not available: {str(e)}")
+except Exception as e:
+    api_logger.error(f"Failed to load auth routes: {str(e)}")
+
 # Import and include cache routes
 try:
     from .routes import cache
@@ -223,6 +233,32 @@ except ImportError as e:
     api_logger.warning(f"Personalized risk routes not available: {str(e)}")
 except Exception as e:
     api_logger.error(f"Failed to load personalized risk routes: {str(e)}")
+
+# Include Health Guardian routes
+try:
+    from .routes import health_guardian
+    app.include_router(health_guardian.router, prefix="/api/v1/health-guardian", tags=["Health Guardian"])
+    api_logger.info("Health Guardian routes loaded successfully")
+except ImportError as e:
+    api_logger.warning(f"Health Guardian routes not available: {str(e)}")
+except Exception as e:
+    api_logger.error(f"Failed to load Health Guardian routes: {str(e)}")
+
+# Include Weather routes
+try:
+    from src.weather import weather_routes
+    app.include_router(weather_routes.router)
+    api_logger.info("Weather routes loaded successfully")
+except Exception as e:
+    api_logger.error(f"Failed to load Weather routes: {str(e)}")
+
+# Include Report routes
+try:
+    from src.reports import report_routes
+    app.include_router(report_routes.router)
+    api_logger.info("Report routes loaded successfully")
+except Exception as e:
+    api_logger.error(f"Failed to load Report routes: {str(e)}")
 
 # --- Root Endpoint ---
 @app.get("/")

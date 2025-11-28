@@ -54,14 +54,12 @@ def create_risk_timeline(data: pd.DataFrame) -> go.Figure:
         title='Risk Timeline Analysis',
         xaxis=dict(title='Time'),
         yaxis=dict(
-            title='Risk Score / Probability (0-10)',
-            titlefont=dict(color='#dc3545'),
+            title=dict(text='Risk Score / Probability (0-10)', font=dict(color='#dc3545')),
             tickfont=dict(color='#dc3545'),
             range=[0, 10]
         ),
         yaxis2=dict(
-            title='Active Cases',
-            titlefont=dict(color='#6c757d'),
+            title=dict(text='Active Cases', font=dict(color='#6c757d')),
             tickfont=dict(color='#6c757d'),
             overlaying='y',
             side='right'
