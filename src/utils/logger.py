@@ -39,7 +39,8 @@ def setup_logger(
         log_path = log_file or settings.log_file
         
         # Create log directory if it doesn't exist
-        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        if os.path.dirname(log_path):
+            os.makedirs(os.path.dirname(log_path), exist_ok=True)
         
         file_handler = logging.handlers.RotatingFileHandler(
             log_path, maxBytes=10485760, backupCount=5  # 10MB files, keep 5

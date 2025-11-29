@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import api from '../api/axios';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {
+    CloudArrowUpIcon,
+    DocumentTextIcon,
+    ArrowLeftIcon,
+    CheckCircleIcon
+} from '@heroicons/react/24/outline';
+import api from '../api/axios';
 
 export default function UploadReport() {
+    const navigate = useNavigate();
     const [file, setFile] = useState<File | null>(null);
-    const [reportType, setReportType] = useState('blood_test');
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<any>(null);
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
+        if (e.target.files && e.target.files[0]) {
             setFile(e.target.files[0]);
         }
     };
@@ -21,115 +26,138 @@ export default function UploadReport() {
         if (!file) return;
 
         setLoading(true);
-        setError('');
         const formData = new FormData();
         formData.append('file', file);
+        formData.append('report_type', 'blood_test');
 
         try {
             const response = await api.post('/reports/upload', formData, {
-                params: { report_type: reportType },
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setResult(response.data);
-        } catch (err: any) {
-            setError(err.response?.data?.detail || 'Upload failed');
+        } catch (error) {
+            console.error('Upload failed', error);
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50 py-8 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
                 <button
                     onClick={() => navigate('/dashboard')}
-                    className="mb-4 text-teal-600 hover:text-teal-800 font-medium"
+                    className="flex items-center text-slate-600 hover:text-teal-600 mb-6 transition-colors"
                 >
-                    &larr; Back to Dashboard
+                    <ArrowLeftIcon className="h-5 w-5 mr-2" />
+                    Back to Dashboard
                 </button>
 
-                <div className="bg-white rounded-lg shadow p-6">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Upload Medical Report</h2>
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Report Type</label>
-                            <select
-                                value={reportType}
-                                onChange={(e) => setReportType(e.target.value)}
-                                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md"
-                            >
-                                <option value="blood_test">Blood Test</option>
-                                <option value="urine_test">Urine Test</option>
-                                <option value="xray">X-Ray</option>
-                                <option value="prescription">Prescription</option>
-                            </select>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="glass-panel rounded-2xl p-8"
+                >
+                    <div className="text-center mb-8">
+                        <div className="inline-flex items-center justify-center p-3 bg-teal-50 rounded-xl mb-4">
+                            <DocumentTextIcon className="h-8 w-8 text-teal-600" />
                         </div>
+                        <h1 className="text-2xl font-bold text-slate-900">Upload Medical Report</h1>
+                        <p className="text-slate-500 mt-2">AI-powered analysis for instant health insights</p>
+                    </div>
 
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">File Upload</label>
-                            <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    {!result ? (
+                        <form onSubmit={handleSubmit} className="space-y-8">
+                            <div className="flex justify-center px-6 pt-5 pb-6 border-2 border-slate-300 border-dashed rounded-xl hover:border-teal-500 hover:bg-teal-50/30 transition-all duration-300">
                                 <div className="space-y-1 text-center">
-                                    <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    <div className="flex text-sm text-gray-600">
-                                        <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-teal-600 hover:text-teal-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-teal-500">
+                                    <CloudArrowUpIcon className="mx-auto h-12 w-12 text-slate-400" />
+                                    <div className="flex text-sm text-slate-600">
+                                        <label className="relative cursor-pointer rounded-md font-medium text-teal-600 hover:text-teal-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-teal-500">
                                             <span>Upload a file</span>
-                                            <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={handleFileChange} accept=".pdf,.jpg,.jpeg,.png" />
+                                            <input
+                                                type="file"
+                                                className="sr-only"
+                                                onChange={handleFileChange}
+                                                accept=".pdf,.jpg,.jpeg,.png"
+                                            />
                                         </label>
                                         <p className="pl-1">or drag and drop</p>
                                     </div>
-                                    <p className="text-xs text-gray-500">PDF, PNG, JPG up to 10MB</p>
+                                    <p className="text-xs text-slate-500">
+                                        PDF, PNG, JPG up to 10MB
+                                    </p>
+                                    {file && (
+                                        <div className="mt-4 p-2 bg-teal-50 text-teal-700 rounded-lg text-sm font-medium">
+                                            Selected: {file.name}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
-                            {file && <p className="mt-2 text-sm text-gray-500">Selected: {file.name}</p>}
-                        </div>
 
-                        {error && <div className="text-red-600 text-sm">{error}</div>}
-
-                        <button
-                            type="submit"
-                            disabled={loading || !file}
-                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 disabled:opacity-50"
+                            <button
+                                type="submit"
+                                disabled={!file || loading}
+                                className={`w-full btn-primary flex justify-center items-center ${(!file || loading) ? 'opacity-50 cursor-not-allowed' : ''
+                                    }`}
+                            >
+                                {loading ? (
+                                    <>
+                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Analyzing Report...
+                                    </>
+                                ) : (
+                                    'Analyze Report'
+                                )}
+                            </button>
+                        </form>
+                    ) : (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="space-y-6"
                         >
-                            {loading ? 'Analyzing...' : 'Upload & Analyze'}
-                        </button>
-                    </form>
-
-                    {result && (
-                        <div className="mt-8 border-t pt-6">
-                            <h3 className="text-lg font-medium text-gray-900 mb-4">Analysis Results</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="bg-gray-50 p-4 rounded-lg">
-                                    <h4 className="font-medium text-gray-700 mb-2">Extracted Data</h4>
-                                    <pre className="text-xs overflow-auto max-h-60 bg-white p-2 rounded border">
-                                        {JSON.stringify(result.extracted_data, null, 2)}
-                                    </pre>
-                                </div>
-                                <div className="bg-blue-50 p-4 rounded-lg">
-                                    <h4 className="font-medium text-blue-900 mb-2">AI Assessment</h4>
-                                    <div className="space-y-2">
-                                        {result.ai_analysis?.risk_assessment && Object.entries(result.ai_analysis.risk_assessment).map(([key, val]: [string, any]) => (
-                                            <div key={key} className="flex justify-between text-sm">
-                                                <span className="capitalize text-blue-800">{key.replace('_', ' ')}</span>
-                                                <span className="font-bold">{val.level}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-4">
-                                        <h5 className="text-sm font-medium text-blue-900">Recommendations:</h5>
-                                        <ul className="list-disc list-inside text-sm text-blue-800 mt-1">
-                                            {result.ai_analysis?.recommendations?.map((rec: string, i: number) => (
-                                                <li key={i}>{rec}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                            <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-4 flex items-center gap-3">
+                                <CheckCircleIcon className="h-6 w-6 text-emerald-600" />
+                                <div>
+                                    <h3 className="font-semibold text-emerald-900">Analysis Complete</h3>
+                                    <p className="text-sm text-emerald-700">Report processed successfully</p>
                                 </div>
                             </div>
-                        </div>
+
+                            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                                <h3 className="font-semibold text-slate-900 mb-4">Extracted Data</h3>
+                                <dl className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
+                                    {Object.entries(result.extracted_data || {}).map(([key, value]: [string, any]) => (
+                                        <div key={key} className="sm:col-span-1">
+                                            <dt className="text-sm font-medium text-slate-500 capitalize">{key.replace(/_/g, ' ')}</dt>
+                                            <dd className="mt-1 text-sm text-slate-900 font-semibold">{value}</dd>
+                                        </div>
+                                    ))}
+                                </dl>
+                            </div>
+
+                            <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                                <h3 className="font-semibold text-slate-900 mb-4">AI Assessment</h3>
+                                <p className="text-slate-600 leading-relaxed">
+                                    {result.risk_assessment?.summary || "No specific risks identified based on the provided data."}
+                                </p>
+                            </div>
+
+                            <button
+                                onClick={() => {
+                                    setFile(null);
+                                    setResult(null);
+                                }}
+                                className="w-full btn-secondary"
+                            >
+                                Upload Another Report
+                            </button>
+                        </motion.div>
                     )}
-                </div>
+                </motion.div>
             </div>
         </div>
     );

@@ -21,30 +21,10 @@ function AppRoutes() {
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route
-                path="/dashboard"
-                element={
-                    <ProtectedRoute>
-                        <Dashboard />
-                    </ProtectedRoute>
-                }
-            />
-            <Route
-                path="/upload-report"
-                element={
-                    <ProtectedRoute>
-                        <UploadReport />
-                    </ProtectedRoute>
-                }
-            />
-            <Route
-                path="/log-symptoms"
-                element={
-                    <ProtectedRoute>
-                        <SymptomLogger />
-                    </ProtectedRoute>
-                }
-            />
+            {/* Bypassed ProtectedRoute for preview */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/upload-report" element={<UploadReport />} />
+            <Route path="/log-symptoms" element={<SymptomLogger />} />
             <Route path="/" element={<Navigate to="/dashboard" />} />
         </Routes>
     );

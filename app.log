@@ -1,0 +1,149 @@
+2025-11-29 06:31:55,986 - epidemic_ai.api - INFO - main.py:187 - Auth routes loaded successfully
+2025-11-29 06:31:55,987 - epidemic_ai.api - INFO - main.py:187 - Auth routes loaded successfully
+2025-11-29 06:31:55,986 - epidemic_ai.api - INFO - main.py:187 - Auth routes loaded successfully
+2025-11-29 06:31:55,987 - epidemic_ai.api - INFO - main.py:187 - Auth routes loaded successfully
+2025-11-29 06:32:01,622 - epidemic_ai.api - WARNING - main.py:206 - Mental health routes not available: cannot import name 'Alert' from 'src.mental_health.models' (C:\Users\Janmejay Singh\Desktop\EpiSPY\src\mental_health\models.py)
+2025-11-29 06:32:01,622 - epidemic_ai.api - WARNING - main.py:206 - Mental health routes not available: cannot import name 'Alert' from 'src.mental_health.models' (C:\Users\Janmejay Singh\Desktop\EpiSPY\src\mental_health\models.py)
+2025-11-29 06:32:01,622 - epidemic_ai.api - WARNING - main.py:206 - Mental health routes not available: cannot import name 'Alert' from 'src.mental_health.models' (C:\Users\Janmejay Singh\Desktop\EpiSPY\src\mental_health\models.py)
+2025-11-29 06:32:01,622 - epidemic_ai.api - WARNING - main.py:206 - Mental health routes not available: cannot import name 'Alert' from 'src.mental_health.models' (C:\Users\Janmejay Singh\Desktop\EpiSPY\src\mental_health\models.py)
+2025-11-29 06:32:01,627 - epidemic_ai.api - INFO - main.py:213 - Policy recommendation routes loaded successfully
+2025-11-29 06:32:01,627 - epidemic_ai.api - INFO - main.py:213 - Policy recommendation routes loaded successfully
+2025-11-29 06:32:01,628 - epidemic_ai.api - INFO - main.py:213 - Policy recommendation routes loaded successfully
+2025-11-29 06:32:01,628 - epidemic_ai.api - INFO - main.py:213 - Policy recommendation routes loaded successfully
+2025-11-29 06:32:01,642 - epidemic_ai.api - INFO - main.py:222 - Marketplace routes loaded successfully
+2025-11-29 06:32:01,642 - epidemic_ai.api - INFO - main.py:222 - Marketplace routes loaded successfully
+2025-11-29 06:32:01,643 - epidemic_ai.api - INFO - main.py:222 - Marketplace routes loaded successfully
+2025-11-29 06:32:01,643 - epidemic_ai.api - INFO - main.py:222 - Marketplace routes loaded successfully
+2025-11-29 06:32:01,655 - epidemic_ai.api - INFO - main.py:231 - Personalized risk routes loaded successfully
+2025-11-29 06:32:01,655 - epidemic_ai.api - INFO - main.py:231 - Personalized risk routes loaded successfully
+2025-11-29 06:32:01,656 - epidemic_ai.api - INFO - main.py:231 - Personalized risk routes loaded successfully
+2025-11-29 06:32:01,656 - epidemic_ai.api - INFO - main.py:231 - Personalized risk routes loaded successfully
+2025-11-29 06:32:03,568 - epidemic_ai.api - ERROR - main.py:245 - Failed to load Health Guardian routes: embedded null character
+2025-11-29 06:32:03,568 - epidemic_ai.api - ERROR - main.py:245 - Failed to load Health Guardian routes: embedded null character
+2025-11-29 06:32:03,569 - epidemic_ai.api - ERROR - main.py:245 - Failed to load Health Guardian routes: embedded null character
+2025-11-29 06:32:03,569 - epidemic_ai.api - ERROR - main.py:245 - Failed to load Health Guardian routes: embedded null character
+2025-11-29 06:32:04,126 - epidemic_ai.api - INFO - main.py:251 - Weather routes loaded successfully
+2025-11-29 06:32:04,126 - epidemic_ai.api - INFO - main.py:251 - Weather routes loaded successfully
+2025-11-29 06:32:04,126 - epidemic_ai.api - INFO - main.py:251 - Weather routes loaded successfully
+2025-11-29 06:32:04,146 - epidemic_ai.api - INFO - main.py:259 - Report routes loaded successfully
+2025-11-29 06:32:04,146 - epidemic_ai.api - INFO - main.py:259 - Report routes loaded successfully
+2025-11-29 06:32:04,148 - epidemic_ai.api - INFO - main.py:259 - Report routes loaded successfully
+2025-11-29 06:32:04,148 - epidemic_ai.api - INFO - main.py:259 - Report routes loaded successfully
+2025-11-29 06:32:04,148 - epidemic_ai.api - INFO - main.py:38 - Application starting up...
+2025-11-29 06:32:04,148 - epidemic_ai.api - INFO - main.py:38 - Application starting up...
+2025-11-29 06:32:04,149 - epidemic_ai.api - INFO - main.py:46 - Initializing database: localhost:5432/db
+2025-11-29 06:32:04,149 - epidemic_ai.api - INFO - main.py:46 - Initializing database: localhost:5432/db
+2025-11-29 06:32:04,149 - epidemic_ai.api - INFO - main.py:38 - Application starting up...
+2025-11-29 06:32:04,149 - epidemic_ai.api - INFO - main.py:38 - Application starting up...
+2025-11-29 06:32:04,150 - epidemic_ai.api - INFO - main.py:46 - Initializing database: localhost:5432/db
+2025-11-29 06:32:04,150 - epidemic_ai.api - INFO - main.py:46 - Initializing database: localhost:5432/db
+2025-11-29 06:32:04,151 - epidemic_ai.api - ERROR - database.py:70 - Failed to initialize database: No module named 'psycopg2'
+2025-11-29 06:32:04,151 - epidemic_ai.api - ERROR - database.py:70 - Failed to initialize database: No module named 'psycopg2'
+2025-11-29 06:32:04,151 - epidemic_ai.api - ERROR - main.py:50 - Database initialization failed: No module named 'psycopg2'
+2025-11-29 06:32:04,151 - epidemic_ai.api - ERROR - main.py:50 - Database initialization failed: No module named 'psycopg2'
+2025-11-29 06:32:04,152 - epidemic_ai.api - WARNING - main.py:51 - Continuing without database connection
+2025-11-29 06:32:04,152 - epidemic_ai.api - ERROR - database.py:70 - Failed to initialize database: No module named 'psycopg2'
+2025-11-29 06:32:04,152 - epidemic_ai.api - WARNING - main.py:51 - Continuing without database connection
+2025-11-29 06:32:04,152 - epidemic_ai.api - ERROR - database.py:70 - Failed to initialize database: No module named 'psycopg2'
+2025-11-29 06:32:04,152 - epidemic_ai.api - INFO - main.py:55 - Initializing Ollama client: http://localhost:11434
+2025-11-29 06:32:04,152 - epidemic_ai.api - ERROR - main.py:50 - Database initialization failed: No module named 'psycopg2'
+2025-11-29 06:32:04,152 - epidemic_ai.api - INFO - main.py:55 - Initializing Ollama client: http://localhost:11434
+2025-11-29 06:32:04,152 - epidemic_ai.api - ERROR - main.py:50 - Database initialization failed: No module named 'psycopg2'
+2025-11-29 06:32:04,153 - epidemic_ai.api - WARNING - main.py:51 - Continuing without database connection
+2025-11-29 06:32:04,153 - epidemic_ai.api - WARNING - main.py:51 - Continuing without database connection
+2025-11-29 06:32:04,154 - epidemic_ai.api - INFO - main.py:55 - Initializing Ollama client: http://localhost:11434
+2025-11-29 06:32:04,154 - epidemic_ai.api - INFO - main.py:55 - Initializing Ollama client: http://localhost:11434
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - ollama_client_wrapper.py:35 - Ollama client initialized: http://127.0.0.1:11434
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - ollama_client_wrapper.py:35 - Ollama client initialized: http://127.0.0.1:11434
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - ollama_client_wrapper.py:35 - Ollama client initialized: http://127.0.0.1:11434
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - ollama_client_wrapper.py:35 - Ollama client initialized: http://127.0.0.1:11434
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - main.py:59 - Ollama client initialized successfully
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - main.py:59 - Ollama client initialized successfully
+2025-11-29 06:32:04,848 - epidemic_ai.api - INFO - main.py:59 - Ollama client initialized successfully
+2025-11-29 06:32:04,849 - epidemic_ai.api - INFO - main.py:68 - Initializing ChromaDB client...
+2025-11-29 06:32:04,849 - epidemic_ai.api - INFO - main.py:68 - Initializing ChromaDB client...
+2025-11-29 06:32:04,849 - epidemic_ai.api - INFO - main.py:68 - Initializing ChromaDB client...
+2025-11-29 06:32:05,148 - epidemic_ai.api - INFO - chroma_client.py:38 - ChromaDB client initialized (local persistent)
+2025-11-29 06:32:05,148 - epidemic_ai.api - INFO - chroma_client.py:38 - ChromaDB client initialized (local persistent)
+2025-11-29 06:32:05,152 - epidemic_ai.api - INFO - chroma_client.py:38 - ChromaDB client initialized (local persistent)
+2025-11-29 06:32:05,152 - epidemic_ai.api - INFO - chroma_client.py:38 - ChromaDB client initialized (local persistent)
+2025-11-29 06:32:05,195 - epidemic_ai.api - INFO - main.py:72 - ChromaDB client initialized successfully
+2025-11-29 06:32:05,195 - epidemic_ai.api - INFO - main.py:72 - ChromaDB client initialized successfully
+2025-11-29 06:32:05,196 - epidemic_ai.api - INFO - main.py:81 - Initializing SEIR epidemic model...
+2025-11-29 06:32:05,196 - epidemic_ai.api - INFO - main.py:81 - Initializing SEIR epidemic model...
+2025-11-29 06:32:05,196 - epidemic_ai.api - INFO - main.py:84 - SEIR model initialized successfully
+2025-11-29 06:32:05,196 - epidemic_ai.api - INFO - main.py:84 - SEIR model initialized successfully
+2025-11-29 06:32:05,196 - epidemic_ai.api - INFO - main.py:91 - Initializing Redis client: redis://localhost:6379/0
+2025-11-29 06:32:05,196 - epidemic_ai.api - INFO - main.py:91 - Initializing Redis client: redis://localhost:6379/0
+2025-11-29 06:32:05,196 - epidemic_ai.api - ERROR - main.py:102 - Redis client initialization error: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:32:05,196 - epidemic_ai.api - ERROR - main.py:102 - Redis client initialization error: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:32:05,198 - epidemic_ai.api - WARNING - main.py:103 - Continuing without Redis (caching and rate limiting will be limited)
+2025-11-29 06:32:05,198 - epidemic_ai.api - WARNING - main.py:103 - Continuing without Redis (caching and rate limiting will be limited)
+2025-11-29 06:32:05,198 - epidemic_ai.api - INFO - main.py:105 - Application startup completed successfully
+2025-11-29 06:32:05,198 - epidemic_ai.api - INFO - main.py:105 - Application startup completed successfully
+2025-11-29 06:32:05,202 - epidemic_ai.api - INFO - main.py:72 - ChromaDB client initialized successfully
+2025-11-29 06:32:05,202 - epidemic_ai.api - INFO - main.py:72 - ChromaDB client initialized successfully
+2025-11-29 06:32:05,203 - epidemic_ai.api - INFO - main.py:81 - Initializing SEIR epidemic model...
+2025-11-29 06:32:05,203 - epidemic_ai.api - INFO - main.py:81 - Initializing SEIR epidemic model...
+2025-11-29 06:32:05,203 - epidemic_ai.api - INFO - main.py:84 - SEIR model initialized successfully
+2025-11-29 06:32:05,203 - epidemic_ai.api - INFO - main.py:84 - SEIR model initialized successfully
+2025-11-29 06:32:05,204 - epidemic_ai.api - INFO - main.py:91 - Initializing Redis client: redis://localhost:6379/0
+2025-11-29 06:32:05,204 - epidemic_ai.api - INFO - main.py:91 - Initializing Redis client: redis://localhost:6379/0
+2025-11-29 06:32:05,204 - epidemic_ai.api - ERROR - main.py:102 - Redis client initialization error: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:32:05,204 - epidemic_ai.api - ERROR - main.py:102 - Redis client initialization error: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:32:05,204 - epidemic_ai.api - WARNING - main.py:103 - Continuing without Redis (caching and rate limiting will be limited)
+2025-11-29 06:32:05,204 - epidemic_ai.api - WARNING - main.py:103 - Continuing without Redis (caching and rate limiting will be limited)
+2025-11-29 06:32:05,205 - epidemic_ai.api - INFO - main.py:105 - Application startup completed successfully
+2025-11-29 06:32:05,205 - epidemic_ai.api - INFO - main.py:105 - Application startup completed successfully
+2025-11-29 06:35:00,329 - epidemic_ai.api - INFO - main.py:187 - Auth routes loaded successfully
+2025-11-29 06:35:00,329 - epidemic_ai.api - INFO - main.py:187 - Auth routes loaded successfully
+2025-11-29 06:35:01,419 - epidemic_ai.api - WARNING - main.py:206 - Mental health routes not available: cannot import name 'Alert' from 'src.mental_health.models' (C:\Users\Janmejay Singh\Desktop\EpiSPY\src\mental_health\models.py)
+2025-11-29 06:35:01,419 - epidemic_ai.api - WARNING - main.py:206 - Mental health routes not available: cannot import name 'Alert' from 'src.mental_health.models' (C:\Users\Janmejay Singh\Desktop\EpiSPY\src\mental_health\models.py)
+2025-11-29 06:35:01,425 - epidemic_ai.api - INFO - main.py:213 - Policy recommendation routes loaded successfully
+2025-11-29 06:35:01,425 - epidemic_ai.api - INFO - main.py:213 - Policy recommendation routes loaded successfully
+2025-11-29 06:35:01,439 - epidemic_ai.api - INFO - main.py:222 - Marketplace routes loaded successfully
+2025-11-29 06:35:01,439 - epidemic_ai.api - INFO - main.py:222 - Marketplace routes loaded successfully
+2025-11-29 06:35:01,451 - epidemic_ai.api - INFO - main.py:231 - Personalized risk routes loaded successfully
+2025-11-29 06:35:01,451 - epidemic_ai.api - INFO - main.py:231 - Personalized risk routes loaded successfully
+2025-11-29 06:35:02,280 - epidemic_ai.api - ERROR - main.py:245 - Failed to load Health Guardian routes: embedded null character
+2025-11-29 06:35:02,280 - epidemic_ai.api - ERROR - main.py:245 - Failed to load Health Guardian routes: embedded null character
+2025-11-29 06:35:02,441 - epidemic_ai.api - INFO - main.py:251 - Weather routes loaded successfully
+2025-11-29 06:35:02,441 - epidemic_ai.api - INFO - main.py:251 - Weather routes loaded successfully
+2025-11-29 06:35:02,451 - epidemic_ai.api - INFO - main.py:259 - Report routes loaded successfully
+2025-11-29 06:35:02,451 - epidemic_ai.api - INFO - main.py:259 - Report routes loaded successfully
+2025-11-29 06:35:02,454 - epidemic_ai.api - INFO - main.py:38 - Application starting up...
+2025-11-29 06:35:02,454 - epidemic_ai.api - INFO - main.py:38 - Application starting up...
+2025-11-29 06:35:02,455 - epidemic_ai.api - INFO - main.py:46 - Initializing database: localhost:5432/db
+2025-11-29 06:35:02,455 - epidemic_ai.api - INFO - main.py:46 - Initializing database: localhost:5432/db
+2025-11-29 06:35:02,457 - epidemic_ai.api - ERROR - database.py:70 - Failed to initialize database: No module named 'psycopg2'
+2025-11-29 06:35:02,457 - epidemic_ai.api - ERROR - database.py:70 - Failed to initialize database: No module named 'psycopg2'
+2025-11-29 06:35:02,458 - epidemic_ai.api - ERROR - main.py:50 - Database initialization failed: No module named 'psycopg2'
+2025-11-29 06:35:02,458 - epidemic_ai.api - ERROR - main.py:50 - Database initialization failed: No module named 'psycopg2'
+2025-11-29 06:35:02,458 - epidemic_ai.api - WARNING - main.py:51 - Continuing without database connection
+2025-11-29 06:35:02,458 - epidemic_ai.api - WARNING - main.py:51 - Continuing without database connection
+2025-11-29 06:35:02,459 - epidemic_ai.api - INFO - main.py:55 - Initializing Ollama client: http://localhost:11434
+2025-11-29 06:35:02,459 - epidemic_ai.api - INFO - main.py:55 - Initializing Ollama client: http://localhost:11434
+2025-11-29 06:35:02,977 - epidemic_ai.api - INFO - ollama_client_wrapper.py:35 - Ollama client initialized: http://127.0.0.1:11434
+2025-11-29 06:35:02,977 - epidemic_ai.api - INFO - ollama_client_wrapper.py:35 - Ollama client initialized: http://127.0.0.1:11434
+2025-11-29 06:35:02,978 - epidemic_ai.api - INFO - main.py:59 - Ollama client initialized successfully
+2025-11-29 06:35:02,978 - epidemic_ai.api - INFO - main.py:59 - Ollama client initialized successfully
+2025-11-29 06:35:02,979 - epidemic_ai.api - INFO - main.py:68 - Initializing ChromaDB client...
+2025-11-29 06:35:02,979 - epidemic_ai.api - INFO - main.py:68 - Initializing ChromaDB client...
+2025-11-29 06:35:03,129 - epidemic_ai.api - INFO - chroma_client.py:38 - ChromaDB client initialized (local persistent)
+2025-11-29 06:35:03,129 - epidemic_ai.api - INFO - chroma_client.py:38 - ChromaDB client initialized (local persistent)
+2025-11-29 06:35:03,166 - epidemic_ai.api - INFO - main.py:72 - ChromaDB client initialized successfully
+2025-11-29 06:35:03,166 - epidemic_ai.api - INFO - main.py:72 - ChromaDB client initialized successfully
+2025-11-29 06:35:03,167 - epidemic_ai.api - INFO - main.py:81 - Initializing SEIR epidemic model...
+2025-11-29 06:35:03,167 - epidemic_ai.api - INFO - main.py:81 - Initializing SEIR epidemic model...
+2025-11-29 06:35:03,168 - epidemic_ai.api - INFO - main.py:84 - SEIR model initialized successfully
+2025-11-29 06:35:03,168 - epidemic_ai.api - INFO - main.py:84 - SEIR model initialized successfully
+2025-11-29 06:35:03,168 - epidemic_ai.api - INFO - main.py:91 - Initializing Redis client: redis://localhost:6379/0
+2025-11-29 06:35:03,168 - epidemic_ai.api - INFO - main.py:91 - Initializing Redis client: redis://localhost:6379/0
+2025-11-29 06:35:03,169 - epidemic_ai.api - ERROR - main.py:102 - Redis client initialization error: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:35:03,169 - epidemic_ai.api - ERROR - main.py:102 - Redis client initialization error: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:35:03,170 - epidemic_ai.api - WARNING - main.py:103 - Continuing without Redis (caching and rate limiting will be limited)
+2025-11-29 06:35:03,170 - epidemic_ai.api - WARNING - main.py:103 - Continuing without Redis (caching and rate limiting will be limited)
+2025-11-29 06:35:03,171 - epidemic_ai.api - INFO - main.py:105 - Application startup completed successfully
+2025-11-29 06:35:03,171 - epidemic_ai.api - INFO - main.py:105 - Application startup completed successfully
+2025-11-29 06:41:32,660 - epidemic_ai.api - ERROR - rate_limiting.py:82 - Redis rate limiting failed, falling back: aioredis not installed. Install with: pip install aioredis
+2025-11-29 06:41:32,660 - epidemic_ai.api - ERROR - rate_limiting.py:82 - Redis rate limiting failed, falling back: aioredis not installed. Install with: pip install aioredis
